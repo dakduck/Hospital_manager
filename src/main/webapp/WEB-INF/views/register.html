@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Register</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+    <!--  MY  -->
+    <link rel="stylesheet" th:href="@{/resources/global.css}" />
+    <!--   MY SCRIPTS -->
+    <script th:src="@{/resources/global.js}"></script>
+    <!--    -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<div th:replace="../views/header :: header"></div>
+
+<div class="container">
+    <div class="row">
+        <h1 th:text="#{label.register}">Register</h1>
+    </div>
+
+    <form action="#" id="register-form" th:action="@{/register}" method="POST" th:object="${doc}">
+        <div class="form-group">
+            <label for="username" th:text="#{label.username}">Username</label>
+            <input id="username" name="username" class="form-control" />
+            <span th:if="${#fields.hasErrors('username')}"
+                  th:errors="${doc.username}" class="text-danger">
+            </span>
+        </div>
+        <div class="form-group">
+            <label for="firstName" th:text="#{label.fname}">First Name</label>
+            <input id="firstName" name="firstName" class="form-control" />
+            <span th:if="${#fields.hasErrors('firstName')}"
+                  th:errors="${doc.firstName}" class="text-danger">
+            </span>
+        </div>
+        <div class="form-group">
+            <label for="lastName" th:text="#{label.lname}">Last Name</label>
+            <input id="lastName" name="lastName" class="form-control" />
+            <span th:if="${#fields.hasErrors('lastName')}"
+                  th:errors="${doc.lastName}" class="text-danger">
+            </span>
+        </div>
+        <div class="form-group">
+            <label for="position" th:text="#{label.position}">Position</label>
+            <input id="position" name="position" class="form-control" />
+            <span th:if="${#fields.hasErrors('position')}"
+                  th:errors="${doc.position}" class="text-danger">
+            </span>
+        </div>
+        <div class="form-group">
+            <label for="pass" th:text="#{label.pass}">Password</label>
+            <input id="pass" type="password" name="password" class="form-control" />
+            <span th:if="${#fields.hasErrors('password')}"
+                  th:errors="${doc.password}" class="text-danger">
+            </span>
+        </div>
+        <button type="submit" id="btn-save" class="btn btn-primary" th:text="#{label.register}">Register</button>
+    </form>
+</div>
+</body>
+</html>

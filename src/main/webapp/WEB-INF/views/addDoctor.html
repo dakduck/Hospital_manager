@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Register</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+    <!--  MY  -->
+    <link rel="stylesheet" th:href="@{/resources/global.css}" />
+    <!--   MY SCRIPTS -->
+    <script th:src="@{/resources/global.js}"></script>
+    <!--    -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<div th:replace="../views/header :: header"></div>
+
+<div class="container">
+    <div class="row">
+        <h1>Add Patient</h1>
+    </div>
+
+    <form action="#" th:action="@{/patients/addPatient}"
+          method="post" th:object="${pat}">
+        <div class="form-group">
+            <label for="firstName">First Name</label>
+            <input id="firstName" class="form-control" th:field="*{firstName}"/>
+            <span th:if="${#fields.hasErrors('firstName')}"
+                  th:errors="${pat.firstName}" class="text-danger">
+            </span>
+        </div>
+        <div>
+            <label for="lastName">Last Name</label>
+            <input id="lastName" class="form-control" th:field="*{lastName}"/>
+            <span th:if="${#fields.hasErrors('lastName')}"
+                  th:errors="${pat.lastName}" class="text-danger">
+            </span>
+        </div>
+        <div>
+            <label for="state">State</label>
+            <input id="state" class="form-control" th:field="*{state}"/>
+            <span th:if="${#fields.hasErrors('state')}"
+                  th:errors="${pat.state}" class="text-danger">
+            </span>
+        </div>
+        <div class = "form-group">
+            <label for = "student-bd">Birthday</label>
+            <input type="date" id="student-bd" class="form-control"
+                   th:field="*{bd}"/>
+        </div>
+        <div class = "form-group">
+            <label for = "student-gender-f">Female</label>
+            <input type="radio" id="student-gender-f" value="f" class="form-control" th:field="*{gender}"/>
+            <label for="student-gender-m">Male</label>
+            <input type="radio" id="student-gender-m" value="m" class="form-control" th:field="*{gender}"/>
+            <span th:if="${#fields.hasErrors('gender')}"
+                  th:errors="${pat.gender}" class="text-danger">
+            </span>
+        </div>
+        <button type="submit">Submit</button>
+    </form>
+</div>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>About</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <!--  MY  -->
+    <link rel="stylesheet" th:href="@{/resources/global.css}" />
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+    <!--   MY SCRIPTS -->
+    <script th:src="@{/resources/global.js}"></script>
+    <!--    -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+
+</head>
+<body>
+
+<div th:replace="../views/header :: header"></div>
+<div class="container">
+    <section class="page-section" id="about">
+            <div class="page-header text-uppercase" th:text="#{label.about}">about</div>
+            <div th:text="#{label.aboutText1}">1</div>
+            <div th:text="#{label.aboutText2}">2</div>
+    </section>
+    <br>
+    <section class="page-section" id="instructions">
+            <div class="page-header text-uppercase" th:text="#{label.instruction}">i</div>
+            <div th:text="#{label.i1}">1. Sign in if you are here for the first time</div>
+            <div th:text="#{label.i2}">2.</div>
+            <div th:text="#{label.i3}">3. </div>
+            <div th:text="#{label.i4}">4.</div>
+    </section>
+</div>
+
+
+</body>
+</html>

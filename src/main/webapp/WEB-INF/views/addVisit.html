@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Register</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+    <!--  MY  -->
+    <link rel="stylesheet" th:href="@{/resources/global.css}" />
+    <!--   MY SCRIPTS -->
+    <script th:src="@{/resources/global.js}"></script>
+    <!--    -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<div th:replace="../views/header :: header"></div>
+
+<div class="container">
+    <div class="row">
+        <h1>Add Visit</h1>
+    </div>
+
+    <form action="#" th:action="@{/patients/addVisit(patientId=${patId})}"
+          method="post" th:object="${visit}">
+        <div class="form-group">
+            <label for="firstName">Notes</label>
+            <input id="firstName" class="form-control" th:field="*{notes}"/>
+            <span th:if="${#fields.hasErrors('notes')}"
+                  th:errors="${visit.notes}" class="text-danger">
+            </span>
+        </div>
+        <div class = "form-group">
+            <label for = "student-bd">Date</label>
+            <input type="date" id="student-bd" class="form-control"
+                   th:field="*{date}"/>
+        </div>
+        <button type="submit">Submit</button>
+    </form>
+</div>
+</body>
+</html>

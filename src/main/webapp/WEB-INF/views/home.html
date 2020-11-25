@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Home</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <!--  MY  -->
+    <link rel="stylesheet" th:href="@{/resources/global.css}" />
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+    <!--   MY SCRIPTS -->
+    <script th:src="@{/resources/global.js}"></script>
+    <!--    -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+
+</head>
+<body>
+
+<div class="container">
+<div class="col-md-4 col-md-offset-4 text-center">
+    <h2 th:text="#{label.lang}">Choose a language</h2>
+    <div class="row">
+        <div class="col-md-4 col-md-offset-4">
+            <a class="btn btn-primary" href="?lang=ru" th:text="#{label.rus}"></a>
+        </div>
+    </div>
+    <div class="row" th:text="#{label.or}">or</div>
+    <div class="row">
+        <div class="col-md-4 col-md-offset-4">
+            <a class="btn btn-primary" href="?lang=en" th:text="#{label.eng}"></a>
+        </div>
+    </div>
+    <div class="row" th:text="#{label.and}"> </div>
+    <div class="row">
+        <div class="col-md-4 col-md-offset-4 text-center">
+            <a class="btn btn-success" th:href="@{/about}">OK</a>
+        </div>
+    </div>
+</div>
+</div>
+
+
+</body>
+</html>

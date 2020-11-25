@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Profile</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <!--  MY  -->
+    <link rel="stylesheet" th:href="@{/resources/global.css}" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+    <!--   MY SCRIPTS -->
+    <script th:src="@{/resources/global.js}"></script>
+
+</head>
+<body>
+<div th:replace="../views/header :: header"></div>
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12 ">
+            <div class="panel panel-default">
+                <div class="panel-heading">  <h4>Doctor Profile</h4></div>
+                <div class="panel-body">
+                    <div class="box box-info">
+                        <div class="box-body">
+                            <div class="col-sm-6">
+                                <div  align="center"> <img alt="User Pic" src="https://x1.xingassets.com/assets/frontend_minified/img/users/nobody_m.original.jpg" id="profile-image1" class="img-circle img-responsive">
+                                </div>
+                                <br>
+                                <!-- /input-group -->
+                            </div>
+                            <div class="col-sm-6">
+                                <h4 style="color:#00b1b1;" th:text="${doctor.firstName+' '+doctor.lastName}"></h4></span>
+                                <span><p th:text="${doctor.position}"></p></span>
+                            </div>
+                            <div class="clearfix"></div>
+                            <hr style="margin:5px 0 5px 0;">
+                            <div class="col-sm-5 col-xs-6 tital" th:text="#{label.fname}">First Name:</div><div class="col-sm-7 col-xs-6 " th:text="${doctor.firstName}"></div>
+                            <div class="clearfix"></div>
+                            <div class="bot-border"></div>
+                            <div class="col-sm-5 col-xs-6 tital" th:text="#{label.lname}">Last Name:</div><div class="col-sm-7" th:text="${doctor.lastName}"></div>
+                            <div class="clearfix"></div>
+                            <div class="bot-border"></div>
+                            <div class="col-sm-5 col-xs-6 tital" th:text="#{label.position}">Gender:</div><div class="col-sm-7" th:text="${doctor.position}"></div>
+                            <!-- /.box-body -->
+                        </div>
+                        <!-- /.box -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row" th:if="${isAdmin}">
+        <div class="col-md-12 ">
+            <div class="panel panel-default">
+                <div class="panel-heading">  <h4>Edit Information</h4></div>
+                <div class="panel-body">
+                    <div class="box box-info">
+                        <div class="box-body">
+                            <a class="btn btn-info btn-block my-4">Edit Doctor</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+</body>
+</html>

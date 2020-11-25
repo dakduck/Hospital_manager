@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Doctors</title>
+
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <!--  MY  -->
+    <link rel="stylesheet" th:href="@{/resources/global.css}" />
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+    <!--   MY SCRIPTS -->
+    <script th:src="@{/resources/global.js}"></script>
+    <script th:src="@{/resources/loaderD.js}"></script>
+    <!--    -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+
+</head>
+<body>
+
+<div th:replace="../views/header :: header"></div>
+<div class="container">
+    <div class="row" th:if="${isAdmin}">
+        <div class="col-md-12 ">
+            <div class="panel panel-default">
+                <div class="panel-heading">  <h4>Add Doctor</h4></div>
+                <div class="panel-body">
+                    <div class="box box-info">
+                        <div class="box-body">
+                            <a class="btn btn-info btn-block my-4">Add Docotr</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12 ">
+            <div class="panel panel-default">
+                <div class="panel-heading">  <h4>Search for Doctor</h4></div>
+                <div class="panel-body">
+                    <div class="box box-info">
+                        <div class="box-body">
+                            <form class="" id="searchP-form">
+                                <label for="sortP">Last Name, Position or Username</label>
+                                <div class="row" id="sortP">
+                                    <div class="col-xs-3">
+                                        <select id="sort" class="form-control">
+                                            <option th:each="sort:${sortDoctor}"
+                                                    th:value="${sort}"
+                                                    th:text="${sort}">
+                                            </option>
+                                        </select>
+                                    </div>
+                                    <div class="col-xs-3">
+                                        <input type="text" id="search" class="form-control" placeholder="0">
+                                    </div>
+                                    <div class="col-xs-3">
+                                        <button class="btn btn-info btn-block my-4" type="submit">Search</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12 ">
+            <div class="panel panel-default">
+                <div class="panel-heading">  <h4>All Doctors</h4></div>
+                <div class="panel-body">
+                    <div class="box box-info">
+                        <div class="box-body">
+                            <table class="table">
+                                <thead>
+                                <tr>
+                                    <td th:text="#{label.lname}">Last Name</td>
+                                    <td th:text="#{label.fname}">First Name</td>
+                                    <td th:text="#{label.position}">P</td>
+                                    <td th:text="#{label.username}">U</td>
+                                </tr>
+                                </thead>
+                                <tbody id="tablebody">
+                                </tbody>
+                            </table>
+                                <ul class="pagination" id='pagination'></ul>
+                            <!-- /.box-body -->
+                        </div>
+                        <!-- /.box -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
