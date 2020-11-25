@@ -10,6 +10,9 @@ import ru.isu.hospital.model.Visit;
 
 import java.util.List;
 
+/**
+ * Репозиторий для обращения к таблице Посещений
+ */
 @Repository
 public interface VisitRepository extends JpaRepository<Visit, Long> {
 

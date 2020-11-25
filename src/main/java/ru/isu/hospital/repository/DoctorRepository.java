@@ -9,6 +9,9 @@ import ru.isu.hospital.model.Patient;
 
 import java.util.List;
 
+/**
+ * Репозиторий для обращения к таблице Докторов
+ */
 @Repository
 public interface DoctorRepository extends JpaRepository<Doctor, Long> {
     Doctor findByUsername(String username);

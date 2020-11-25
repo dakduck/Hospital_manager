@@ -10,6 +10,9 @@ import org.springframework.format.annotation.DateTimeFormat;
 import javax.persistence.*;
 import java.time.LocalDate;
 
+/**
+ * Класс, реализующий Посещение - вся информация о нем
+ */
 @Getter
 @Setter
 @ToString

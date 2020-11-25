@@ -10,6 +10,9 @@ import ru.isu.hospital.repository.PatientRepository;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+/**
+ * Контроль ошибок
+ */
 @Component("errorService")
 public class ErrorService implements HandlerExceptionResolver {
     @Autowired

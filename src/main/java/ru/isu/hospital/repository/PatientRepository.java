@@ -13,6 +13,9 @@ import java.time.LocalDate;
 import java.util.List;
 import java.util.Set;
 
+/**
+ * Репозиторий для обращения к таблице Пациентов
+ */
 @Repository
 public interface PatientRepository extends JpaRepository<Patient, Long> {
 

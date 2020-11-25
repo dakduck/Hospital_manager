@@ -11,6 +11,9 @@ import javax.persistence.*;
 import java.time.LocalDate;
 import java.util.Set;
 
+/**
+ * Класс, реализующий Пациента - вся информация о нем
+ */
 @Getter
 @Setter
 @ToString
